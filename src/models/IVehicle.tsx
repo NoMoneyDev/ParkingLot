@@ -1,6 +1,6 @@
 import mongoose from 'mongoose';
 
-const VehicleSchema = new mongoose.Schema({
+const IVehicle = new mongoose.Schema({
   license_plate: {
     type: String,
     required: true,
@@ -11,6 +11,6 @@ const VehicleSchema = new mongoose.Schema({
   },
 });
 
-export default mongoose.models.Vehicle || mongoose.model('Vehicle', VehicleSchema);
+export default mongoose.models.IVehicle || mongoose.model('IVehicle', IVehicle);
 
 

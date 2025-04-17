@@ -1,9 +1,11 @@
-import ParkingSpot from "./parkingspot";
+import { ParkingSpot } from "./parkingspot";
+import { VehicleSize } from "./vehiclesize";
+
 
 abstract class Vehicle {
     public license_plate: String = '';
     public parking_spot: ParkingSpot | null = null;
-    public size: VehicleSize = 0;
+    public size: VehicleSize = VehicleSize.Car;
 
     public is_parking() {
         return this.parking_spot == null;

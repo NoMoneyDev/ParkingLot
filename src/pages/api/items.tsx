@@ -1,6 +1,6 @@
 // pages/api/items.js
 import dbConnect from '../../lib/mongodb';
-import Item from '../../models/item_schema';
+import Item from '../../models/SItem';
 
 export default async function handler(req, res) {
   await dbConnect();

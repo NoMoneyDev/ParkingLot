@@ -1,5 +1,6 @@
+import { VehicleSize } from '../../lib/vehiclesize';
 import dbConnect from '../../lib/mongodb';
-import Vehicle from '../../models/vehicles_schema';
+import Vehicle from '../../models/IVehicle';
 
 export default async function handler(req, res) {
   await dbConnect();
@@ -17,12 +18,11 @@ export default async function handler(req, res) {
       break;
     case 'POST':
       try {
-        const vehicleSizesSet = new Set(Object.values(VehicleSize));
         const isValidSize = (size: string): size is VehicleSize => {
           return (Object.values(VehicleSize) as string[]).includes(size);
         };
         if (!isValidSize(req.body.size)) {
-          throw new Error("Invalid Size");
+          res.status(400).json({ success: false, data: "Invalid Size" });
         }
         const vehicle = await Vehicle.create(req.body);
         vehicle.save();

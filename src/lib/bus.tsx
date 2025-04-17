@@ -1,12 +1,10 @@
-import ParkingSpot from "./parkingspot";
 import Vehicle from "./vehicle";
+import { VehicleSize } from "./vehiclesize";
 
-class Bus extends Vehicle {
+export class Bus extends Vehicle {
     public constructor(license_plate: string) {
         super()
         this.license_plate = license_plate;
         this.size = VehicleSize.Bus;
     }
 }
-
-export default Bus;

@@ -1,7 +1,8 @@
-import ParkingSpot from "./parkingspot";
+import { ParkingSpot } from "./parkingspot";
 import Vehicle from "./vehicle";
+import { VehicleSize } from "./vehiclesize";
 
-class Motorcycle extends Vehicle {
+export class Motorcycle extends Vehicle {
     public constructor(license_plate: string) {
         super()
         this.license_plate = license_plate;
